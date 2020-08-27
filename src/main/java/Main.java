@@ -48,7 +48,7 @@ public class Main {
 
           String day = formatForDateDay.format(dateNow);
           String Month = formatForDateMonth.format(dateNow);
-          String DYear = formatForDateYear.format(dateNow);
+          String Year = formatForDateYear.format(dateNow);
           String Time24Format = formatForDateTime.format(dateNow);
 
           String query =
@@ -58,7 +58,7 @@ public class Main {
           preparedStmt.setInt(1, num() + 1); //Получаем "длину" таблицы и прибавляем 1
           preparedStmt.setString(2, day);
           preparedStmt.setString(3, Month);
-          preparedStmt.setString(4, DYear);
+          preparedStmt.setString(4, Year);
           preparedStmt.setString(5, Time24Format);
           preparedStmt.execute(); //Записываем данные в БД
           System.out.println("save");
