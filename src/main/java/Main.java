@@ -38,9 +38,7 @@ public class Main {
               .cookie("auth", "token")
               .get();
           Elements h1Elements = doc.select("h1");
-          Elements h2Elements = doc.select("h1");
           String h1 = h1Elements.text();
-          String h2 = h2Elements.text();
 
           Date dateNow = new Date();
           SimpleDateFormat formatForDateDay = new SimpleDateFormat("d");
