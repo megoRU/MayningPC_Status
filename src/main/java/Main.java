@@ -46,20 +46,20 @@ public class Main {
           SimpleDateFormat formatForDateYear = new SimpleDateFormat("yyyy");
           SimpleDateFormat formatForDateTime = new SimpleDateFormat("H:m:s");
 
-          String DayDate = formatForDateDay.format(dateNow);
-          String DayMonth = formatForDateMonth.format(dateNow);
-          String DayYear = formatForDateYear.format(dateNow);
-          String DayTime = formatForDateTime.format(dateNow);
+          String day = formatForDateDay.format(dateNow);
+          String Month = formatForDateMonth.format(dateNow);
+          String DYear = formatForDateYear.format(dateNow);
+          String Time24Format = formatForDateTime.format(dateNow);
 
           String query =
               "INSERT INTO Status " + "(id, day, month, year, time)" + " values (?, ?, ?, ?, ?)";
 
           PreparedStatement preparedStmt = conn.prepareStatement(query);
           preparedStmt.setInt(1, num() + 1); //Получаем "длину" таблицы и прибавляем 1
-          preparedStmt.setString(2, DayDate);
-          preparedStmt.setString(3, DayMonth);
-          preparedStmt.setString(4, DayYear);
-          preparedStmt.setString(5, DayTime);
+          preparedStmt.setString(2, day);
+          preparedStmt.setString(3, Month);
+          preparedStmt.setString(4, DYear);
+          preparedStmt.setString(5, Time24Format);
           preparedStmt.execute(); //Записываем данные в БД
           System.out.println("save");
           Thread.sleep(Long.parseLong(h1));
